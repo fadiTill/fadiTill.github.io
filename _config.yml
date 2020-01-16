@@ -1,11 +1,11 @@
 # Site settings
 author: Fadi.T
-title: Why I choose software engineer path.
+title: Why I choose the software engineer path.
 header-img: img/home-bg.png
 email: fadi.tillman@gmail.com
 copyright_name: Fadi.T
 description: > # this means to ignore newlines until "baseurl:"
-  homework 1
+  First mile.
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: TillmanFadimata
 github_username:  fadiTill
