@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Procedural Ruby : Each method."
-date:       2020-02-18 20:26:43 +0000
+date:       2020-02-18 15:26:44 -0500
 permalink:  procedural_ruby_each_method
 ---
 
