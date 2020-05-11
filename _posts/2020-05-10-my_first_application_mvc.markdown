@@ -6,7 +6,7 @@ permalink:  my_first_application_mvc
 ---
 
 
-The content of your blog post goes here.
+
 I was excited to finally make my first application, I been waiting for this moment for years! 
 I had a lot of ideas of things that could be automated, I decided to create an Open House application because of a personal need: as new real estate agent, during Open house, I had to make guests sign, in order to build my pipeline of future clients. 
  however for  practical reasons, my tools were limited, I had the choice between a tablet/phone and a signing sheet, I quickly give up on the signing sheet when  I realized that I wasn't able to read people's writing, most of the time.
