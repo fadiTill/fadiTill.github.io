@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "My first APPLICATION /MVC"
-date:       2020-05-11 02:41:36 +0000
+date:       2020-05-10 22:41:37 -0400
 permalink:  my_first_application_mvc
 ---
 
