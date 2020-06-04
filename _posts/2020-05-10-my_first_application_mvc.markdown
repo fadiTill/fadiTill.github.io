@@ -23,14 +23,15 @@ My application  follow basic functions of a persistent storage "CRUD," so a User
  
   a User "has_many :guests"
 	
-	Also I want  to restrict the acces to a particular guest, so  only the user that built the guest could be  able to use          CRUD, in order to do that I had the  method  below to my edit  and  delete methods :
+	
+Also I want  to restrict the acces to a particular guest, so  only the user that built the guest could be  able to use          CRUD, in order to do that I had the  method  below to my edit  and  delete methods:
  
-" if current_user.id == @guest.user_id"
+ if current_user.id == @guest.user_id
 
 Also I created and  secure the session in my ApplicationController
 
-"enable :sessions"
- "set :session_secret, 'secret' "
+enable :sessions
+ set :session_secret, 'secret' 
  
 finally the user need to be login, I used  an helper method that I had to my ApplicationController from where my GuestsController and UsersController will inherite.
  
