@@ -1,0 +1,90 @@
+---
+layout: post
+title:      "Rails MVC 2.0"
+date:       2020-07-13 03:10:10 +0000
+permalink:  rails_mvc_2_0
+---
+
+
+For this project, I decided to improve my code  and the user's experience of my prior open house MVC using the Rails framework, and follow  the CRUD:
+This MVC allows users to create Open houses and save the information of the guests that visit it.
+
+A/ How I plan and made my code dry
+
+1) Plan Models according to the story
+The most challenging part of this project was to plan the Models and figure the different relationships and implement them with the correct database,  controller, and routes.
+ 
+ Models 
+the Models are Users, Houses, and Guests
+
+class Guest 
+	 
+	 belongs_to :user
+	 belongs_to :house
+
+class House 
+	 has_many :guests
+	 has_many :users, through: :guests
+
+
+ has_many :guests 
+      has_many :guests 
+     has_many :houses, through: :guests
+
+
+class GuestsController < ApplicationController
+ def destroy
+	 @house = House.find(params[:house_id])
+	 @guest = @house.guests.find(params[:id])
+	 @guest.destroy
+	 redirect_to house_path(@house)
+	 end
+
+2/ avoid repetitions
+
+a/I Used Rails form helpers 
+
+ <%= link_to 
+ <%= form_with 
+<%= form_for 
+ 
+b/I refactored my code using helper methods 
+before_action :require_login
+
+ I also  used  partial form 
+<%= render partial: 'form'%>
+
+
+
+B/ How I improve the user experience 
+
+1/ aumniauth
+I use social media aumniauth  gem in order to simplify the MVC accessibility.
+
+2/better presentation
+To improve the user experience I had a  picture of the layout so it can yield throughout the application 
+
+<body>
+
+ <%= image_tag("home-real-estate-106399.jpg",style:"height: 200px; width:1000px")%>
+
+ <%= yield %>
+ </body>
+</html>
+
+
+3/nested resources
+ One of the requirements was to create a nested resources, it created new routes that are more users friendly.
+
+resources :houses do
+	 resources :guests, only: [ :new, :create, :show, :index, :destroy ]
+	end
+
+Nested  Rails routes 
+ new_house_guest GET    /houses/:house_id/guests/new(.:format)                                                   guests#new
+                          house_guest GET    /houses/:house_id/guests/:id(.:format)                                                   guests#show
+                                      DELETE /houses/:house_id/guests/:id(.:format)                                                   guests#destroy
+
+
+It was interesting to see how I could improve my project using a more powerful framework, I 'm excited to learn more and further improve my original project
+ruby.
